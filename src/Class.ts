@@ -3,13 +3,13 @@ function reverse<T>(arr: readonly T[]): readonly T[] {
 }
 
 class A {
-    private a = 3 
+    #a = 3 
     protected b = 5
 
 
 
     log() {
-        console.log(this.a);
+        console.log(this.#a);
         
     }
 
@@ -17,10 +17,12 @@ class A {
 
 const aInstance = new A();
 aInstance.log()
+console.log(aInstance);
+
 
 
 class B extends A {
-
+    
     log() {
         console.log(this.b);
     }
@@ -28,14 +30,15 @@ class B extends A {
 }
 
 const bInstance = new B();
-bInstance.log()
+console.log(bInstance);
+
 
 
 class C {
-    public c = 9
+    private c = 9
 }
 
 const cInstance = new C();
-console.log(cInstance.c);
+console.log(cInstance['c']);
 
 
