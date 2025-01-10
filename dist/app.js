@@ -1,11 +1,28 @@
 "use strict";
+const user = {
+    firstname: 'Privat',
+    lastname: 'Kiemde',
+    age: 32
+};
+function consoleSize(arg) {
+    console.log(arg.length);
+    return arg;
+}
+const abb = consoleSize(["3", 2]);
+function identity(arg) {
+    return arg;
+}
+const aa = identity(3);
+const aaa = identity(3);
+const ab = ["aze", "bze", 3];
+const abc = ["aze", "bze", 3];
 const a = "firstname";
 const n = 3;
 const b = true;
 // Littérals
 const d = null;
 const arr = ['aze', 'aze', 'aze'];
-const user = { firstname: "Franck", lastname: "Kiemde", age: 23 };
+// const user: {firstname: string, lastname: string, age?: number} = {firstname: "Franck", lastname: "Kiemde", age:23}
 const User = { firstname: "Franck", lastname: "Kiemde" };
 const date = new Date();
 const Cb = (e) => {

@@ -1,9 +1,31 @@
 // Allias
-type User = { firstname: string, lastname: string}
+// type User = { firstname: string, lastname: string}
 type DateString = string 
 type Id = string | number
+type Username = keyof User
+
+
+const user = {
+    firstname: 'Privat',
+    lastname: 'Kiemde',
+    age: 32
+}
+
+type User = typeof user
+
 
 // Generics
+type identity<ArgType> = (arg: ArgType) => ArgType
+
+function consoleSize<Type extends{length: number}>(arg: Type): Type {
+    console.log(arg.length);
+    return arg
+}
+
+const abb = consoleSize(["3", 2])
+
+
+
 function identity<ArgType>(arg: ArgType): ArgType {
     return arg;
 }
@@ -22,7 +44,7 @@ const b = true
 // Littérals
 const d: null = null 
 const arr: any[] = ['aze', 'aze', 'aze']
-const user: {firstname: string, lastname: string, age?: number} = {firstname: "Franck", lastname: "Kiemde", age:23}
+// const user: {firstname: string, lastname: string, age?: number} = {firstname: "Franck", lastname: "Kiemde", age:23}
 const User = {firstname: "Franck", lastname: "Kiemde"}
 const date: Date = new Date();
 const Cb: Function = (e: MouseEvent): void => {
