@@ -1,13 +1,31 @@
-// const a: string = "Hello World"
-// const n: number = 3
-// const b = true 
-// // Littérals
-// const d: null = null 
-// const arr: any[] = ['aze', 'aze', 3]
-// const user: {firstname: string, lastname: string, age?: number} = {firstname: "Franck", lastname: "Kiemde", age:23}
-// const User = {firstname: "Franck", lastname: "Kiemde"}
-// const date: Date = new Date();
-// const Cb: Function = (e: MouseEvent): void => {
+// Allias
+type User = { firstname: string, lastname: string}
+type DateString = string 
+type Id = string | number
+
+// Generics
+function identity<ArgType>(arg: ArgType): ArgType {
+    return arg;
+}
+
+const aa = identity<number>(3);
+const aaa = identity(3);
+
+
+const ab = ["aze", "bze", 3];
+const abc: Array<string | number> = ["aze", "bze", 3];
+
+
+const a = "firstname"
+const n: number = 3
+const b = true 
+// Littérals
+const d: null = null 
+const arr: any[] = ['aze', 'aze', 'aze']
+const user: {firstname: string, lastname: string, age?: number} = {firstname: "Franck", lastname: "Kiemde", age:23}
+const User = {firstname: "Franck", lastname: "Kiemde"}
+const date: Date = new Date();
+const Cb: Function = (e: MouseEvent): void => {
 
 // }
 // const cb: (e:MouseEvent)=> void = (e: MouseEvent): number => {
@@ -28,7 +46,7 @@
 // function printId(id:number |string): void {
 //     console.log(id.toString());
 // }
-const compteur = document.querySelector('#compteur')
+const compteur = document.querySelector<HTMLButtonElement>('#compteur')!
 let i = 0;
 
 const increment = (e: Event) => {
@@ -38,16 +56,27 @@ const increment = (e: Event) => {
     if(span) {
         // Type narrowing
     span.innerText = i.toString()
-    }
+}
 }
 
-// Type Narrowing
-function printId(id: string |number) {
-    if(typeof id =="number") {
-        console.log((id * 3).toString());
-    }else {
-        console.log(id.toUpperCase());
+// // Type Narrowing
+// function printId(id: string |number) {
+//     if(typeof id =="number") {
+//         console.log((id * 3).toString());
+//     }else {
+//         console.log(id.toUpperCase());
         
-    }
-}
+//     }
+// }
+
+// function isDate (a: any): a is Date {
+//     return a instanceof Date
+// }
+// function example ( a: Date |HTMLInputElement) {
+//     if (isDate(a)) {
+//         a
+//     }
+// }
+
 compteur?.addEventListener('click', increment)
+}
