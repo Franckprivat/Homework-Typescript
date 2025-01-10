@@ -1,3 +1,6 @@
+// function reverse<T>(arr: readonly T[]): readonly T[] {
+//     return [...arr].reverse();
+// }
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,47 +16,67 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
+// class A {
+//     constructor(
+//         public a: number
+//     ){
+//     }
+// }
+// const aInstance = new A(3);
+// // aInstance.log()
+// console.log(aInstance.a);
+// class B extends A {
+//     log() {
+//         console.log(this.b);
+//     }
+// }
+// const bInstance = new B();
+// console.log(bInstance);
+// class C {
+//     private c = 9
+// }
+// const cInstance = new C();
+// console.log(cInstance['c']);
+var Collection = /** @class */ (function () {
+    function Collection(items) {
+        this.items = items;
     }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-function reverse(arr) {
-    return __spreadArray([], arr, true).reverse();
-}
-var A = /** @class */ (function () {
-    function A() {
-        this.a = 3;
-        this.b = 5;
-    }
-    A.prototype.log = function () {
-        console.log(this.a);
+    Collection.prototype.add = function (item) {
+        this.items.push(item);
+        return this;
     };
-    return A;
-}());
-var aInstance = new A();
-aInstance.log();
-var B = /** @class */ (function (_super) {
-    __extends(B, _super);
-    function B() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    B.prototype.log = function () {
-        console.log(this.b);
+    Collection.prototype.first = function () {
+        return this.items[0] || null;
     };
-    return B;
-}(A));
-var bInstance = new B();
-bInstance.log();
-var C = /** @class */ (function () {
-    function C() {
-        this.c = 9;
-    }
-    return C;
+    return Collection;
 }());
-var cInstance = new C();
-console.log(cInstance.c);
+var Subscriber = /** @class */ (function () {
+    function Subscriber() {
+    }
+    Subscriber.prototype.on = function (name, cb) {
+    };
+    return Subscriber;
+}());
+var a = new Collection([1, "aze", 2]);
+var c = a.add(3);
+var b = a.first();
+var Geometry = /** @class */ (function () {
+    function Geometry() {
+        this.x = 0;
+        this.y = 0;
+    }
+    return Geometry;
+}());
+var Triangle = /** @class */ (function (_super) {
+    __extends(Triangle, _super);
+    function Triangle() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.x = 2;
+        _this.y = 2;
+        return _this;
+    }
+    Triangle.prototype.surface = function () {
+        return 3;
+    };
+    return Triangle;
+}(Geometry));

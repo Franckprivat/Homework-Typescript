@@ -1,44 +1,80 @@
-function reverse<T>(arr: readonly T[]): readonly T[] {
-    return [...arr].reverse();
-}
+// function reverse<T>(arr: readonly T[]): readonly T[] {
+//     return [...arr].reverse();
+// }
 
-class A {
-    #a = 3 
-    protected b = 5
+// class A {
+//     constructor(
+//         public a: number
+//     ){
+
+//     }
+
+// }
+
+// const aInstance = new A(3);
+// // aInstance.log()
+// console.log(aInstance.a);
+
+// class B extends A {
+    
+//     log() {
+//         console.log(this.b);
+//     }
+    
+// }
+
+// const bInstance = new B();
+// console.log(bInstance);
 
 
 
-    log() {
-        console.log(this.#a);
-        
+// class C {
+//     private c = 9
+// }
+
+// const cInstance = new C();
+// console.log(cInstance['c']);
+
+
+class Collection<T> {
+    constructor (private items: T[]) {
+
     }
 
-}
-
-const aInstance = new A();
-aInstance.log()
-console.log(aInstance);
-
-
-
-class B extends A {
-    
-    log() {
-        console.log(this.b);
+    add (item: T): this {
+        this.items.push(item)
+        return this
     }
-    
+
+    first (): T | null {
+        return this.items[0] || null 
+    }
 }
 
-const bInstance = new B();
-console.log(bInstance);
+class Subscriber {
+    on (this: HTMLInputElement, name: string, cb: Function) {
 
-
-
-class C {
-    private c = 9
+    } 
 }
 
-const cInstance = new C();
-console.log(cInstance['c']);
+
+const a = new Collection([1, "aze", 2])
+const c = a.add(3)
+const b = a.first()
 
 
+
+abstract class Geometry {
+    x = 0 
+    y = 0
+    abstract surface (): number
+}
+
+class Triangle extends Geometry {
+    x = 2
+    y = 2
+
+    surface () {
+        return 3 
+    }
+}
