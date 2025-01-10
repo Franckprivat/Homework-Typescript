@@ -3,7 +3,10 @@
         "outDir": "dist",
         "target": "ES2015",
         "noEmitOnError": false,
-        "strict": true
+        "strict": true, 
+        "declaration": true,
+        "moduleResolution": "node",
+        "noUncheckedIndexedAccess": true,
     },
     "files": [
         "src/app.ts"
