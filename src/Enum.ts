@@ -1,23 +1,23 @@
-// // / #Enum
+// / #Enum
 
 
-// enum STEPS {
-//     Intro,
-//     Selection,
-//     Panier,
-//     Paiement
-// }
+enum STEPS {
+    Intro,
+    Selection,
+    Panier,
+    Paiement
+}
 
-// const step: STEPS = STEPS.Selection
-// console.log(step);
+const step: STEPS = STEPS.Selection
+console.log(step);
 
 
-// const enum STEPS {
-//     Intro,
-//     Selection,
-//     Panier,
-//     Paiement
-// }
+const enum STEPS {
+    Intro,
+    Selection,
+    Panier,
+    Paiement
+}
 
-// const step: STEPS = STEPS.Selection
-// console.log(step);
+const step: STEPS = STEPS.Selection
+console.log(step);

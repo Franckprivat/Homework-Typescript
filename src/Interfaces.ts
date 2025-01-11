@@ -30,19 +30,19 @@ Draw(new TwoDimensionPoint())
 
 // ## Type
 
-// ````ts 
-// type NAME = ...
-// ```
+````ts 
+type NAME = ...
+```
 
-// - Peut utiliser les types primaires;
-// - Ne peut être redéfini;
+- Peut utiliser les types primaires;
+- Ne peut être redéfini;
 
-// ## Interface
+## Interface
 
-// ```ts
-// interface NAME {}
+```ts
+interface NAME {}
 
-// - Peut être étendu;
-// -Peut être Implémenté;
+- Peut être étendu;
+-Peut être Implémenté;
 
 
